@@ -12,7 +12,7 @@ RUN npm ci --only=production
 
 # Copy application source
 # { แก้ไขให้ถูกต้อง }
-
+COPY . .
 COPY student_id.txt ./
 
 # Read student ID from file
@@ -49,4 +49,4 @@ EXPOSE 3000
 ENV NODE_ENV=production
 
 # Start the application
-# { แก้ไขให้ถูกต้อง }
+CMD ["npm", "start"]
