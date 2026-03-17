@@ -1,5 +1,6 @@
 name: CI
 
+# กำหนดให้ workflow นี้ทำงานเมื่อมีการ push ไปยัง branch main
 on:
   push:
     branches:
