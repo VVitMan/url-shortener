@@ -16,3 +16,15 @@ services:
     container_name: url-shortener-app
     platform: linux/amd64
     # { แก้ไขให้ถูกต้อง }
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+      # บังคับให้แอปชี้ไปหา Container ที่ชื่อ redis แทน localhost
+      - REDIS_HOST=redis
+    depends_on:
+      redis:
+        # รอให้ Redis บูตเสร็จและ ping ผ่านก่อน ถึงจะเริ่มรันแอป
+        condition: service_healthy
