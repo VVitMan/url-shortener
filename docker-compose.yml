@@ -23,7 +23,7 @@ services:
       - PORT=3000
       - NODE_ENV=production
       # บังคับให้แอปชี้ไปหา Container ที่ชื่อ redis แทน localhost
-      - REDIS_HOST=redis
+      - REDIS_HOST=localhost
     depends_on:
       redis:
         # รอให้ Redis บูตเสร็จและ ping ผ่านก่อน ถึงจะเริ่มรันแอป
